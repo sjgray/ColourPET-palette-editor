@@ -328,7 +328,7 @@ Begin VB.Form frmMain
       Top             =   720
       Width           =   8415
       Begin VB.CommandButton cmdDefault 
-         Caption         =   "Default"
+         Caption         =   "Def&ault"
          Height          =   375
          Left            =   1920
          TabIndex        =   47
@@ -336,7 +336,7 @@ Begin VB.Form frmMain
          Width           =   855
       End
       Begin VB.CommandButton cmdClear 
-         Caption         =   "Clear"
+         Caption         =   "&Clear"
          Height          =   375
          Left            =   2880
          TabIndex        =   46
@@ -344,7 +344,7 @@ Begin VB.Form frmMain
          Width           =   855
       End
       Begin VB.CommandButton cmdBright 
-         Caption         =   "Brighter"
+         Caption         =   "&Brighter"
          Height          =   375
          Left            =   3840
          TabIndex        =   45
@@ -352,7 +352,7 @@ Begin VB.Form frmMain
          Width           =   855
       End
       Begin VB.CommandButton cmdDarker 
-         Caption         =   "Darker"
+         Caption         =   "&Darker"
          Height          =   375
          Left            =   4800
          TabIndex        =   44
@@ -370,7 +370,7 @@ Begin VB.Form frmMain
          Width           =   735
       End
       Begin VB.CommandButton cmdBPaste 
-         Caption         =   "Paste"
+         Caption         =   "&Paste"
          Height          =   375
          Left            =   5760
          TabIndex        =   42
