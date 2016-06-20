@@ -1,0 +1,73 @@
+RRGGBBII Palette Editor (C)2016, Steve J. Gray
+==============================================
+
+INTRODUCTION
+------------
+
+This is a simple editor for generating a PALETTE ROM for my ColourPET+G board.
+Colours are generated on the board in RGBI format. 4 bits are assigned to the
+foreground colour and 4 bits for the background colour. 4 bits gives 16 colours.
+The ColourPET+G board takes the 4 bits and feeds those into the PALETTE ROM
+along with the palette selector byte. This gives 256 palettes of 16 colour each.
+Each colour is 8 bits in the form RRGGBBII, giving 256 possible colours
+(although some colours may be duplicated due to DAC resistor values).
+
+OPERATION
+---------
+
+There are three sections in the window. There is the TOP control section,
+middle Palette section, and bottom Entry section.
+
+CONTROL SECTION
+---------------
+
+On the control section are LOAD, SAVE and ABOUT buttons.
+ABOUT will display the program version, date and copyright.
+LOAD will load the palette rom file "palette.bin".
+SAVE will save back to the same file.
+
+PALETTE SECTION
+---------------
+
+On the palette section are the palette selector, 16 colour boxes, and
+several operation boxes that act on one or more colours.  At the top left
+in blue, is the palette number. Use the up/down arrows below to select
+one of the 256 palettes to edit. The "<" and ">" buttons select an entry
+to edit. The selected entry will have a red box around it. You may also
+click on the entry.
+
+ Colours are labelled 0 to F. Using the RGBI colour model, the 0 to 7 row
+are "normal" colours, and the 8 to F row are "bright" colours (intensity
+bit set). However, when defining a palette any of the 256 colours can be
+put in any colour box. The "Copy Palette" button copies the 16 current
+colours. The "Paste Palette" pastes the 16 saved colours. You can use
+this to duplicate palettes, or simply save a snapshot of the palette
+incase you make a mistake and need to revert back. At the bottom are
+several operation boxes. The "Scope" lets you select if operations are
+performed on all colour entries, the first 8 (top), or the last 8 (bottom):
+
+DEFAULT - Restores the palette to standard RGBI equivilent values.
+CLEAR - Sets colours to black.
+BRIGHTER - Increases the brightness.
+DARKER - Reduces the brightness.
+PASTE - Copies the saved colour.
+
+ENTRY SECTION
+-------------
+
+The entry section lets you edit the selected colour entry. On the left
+is a large box with the selected colour. Beside it are 4 sliders to adjust
+R,G,B and I components. Each component can have a value of 0 to 3. The R,G,B
+components determine the chroma component, and the I determines the hue.
+To the right is the index number of the combined RGBI values. The "Copy Colour"
+button memorizes the current colour values/index. The "Paste Colour" button
+restores the saved value to the current colour. Beside the big box on the left
+is a "<" label/button. Click it to toggle the Colour Picker on or off. The 
+colour picker shows all 256 possible colours. Clicking on it to select a colour.
+Click on the ">" button to toggle the picker back off and view the colour.
+
+USING THE PALETTES
+------------------
+
+When you save you will get a binary file. The file contains 255 x 16 = 4096 bytes
+and can be burned to a 2716 EPROM for use on the ColourPET+G board.
